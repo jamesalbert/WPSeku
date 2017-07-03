@@ -36,179 +36,180 @@ class wpheaders:
         try:
             url = self.check.checkurl(self.url, '')
             r = self.req.send(url)
-            if r.info().getheader('accept-charset'):
+            if r.headers.get('accept-charset', str()):
                 print('Accept-Charset: %s' %
-                      (r.info().getheader('accept-charset')))
-            if r.info().getheader('accept-encoding'):
+                      (r.headers['accept-charset']))
+            if r.headers.get('accept-encoding', str()):
                 print('Accept-Encoding: %s' %
-                      (r.info().getheader('accept-encoding')))
-            if r.info().getheader('accept-language'):
+                      (r.headers['accept-encoding']))
+            if r.headers.get('accept-language', str()):
                 print('accept-language: %s' %
-                      (r.info().getheader('accept-language')))
-            if r.info().getheader('accept-ranges'):
+                      (r.headers['accept-language']))
+            if r.headers.get('accept-ranges', str()):
                 print('Accept-Ranges: %s' %
-                      (r.info().getheader('accept-ranges')))
-            if r.info().getheader('access-control-allow-credentials'):
+                      (r.headers['accept-ranges']))
+            if r.headers.get('access-control-allow-credentials', str()):
                 print('Access-Control-Allow-Credentials: %s' %
-                      (r.info().getheader('access-control-allow-credentials')))
-            if r.info().getheader('access-control-allow-headers'):
+                      (r.headers['access-control-allow-credentials']))
+            if r.headers.get('access-control-allow-headers', str()):
                 print('Access-Control-Allow-Headers: %s' %
-                      (r.info().getheader('access-control-allow-headers')))
-            if r.info().getheader('access-control-allow-methods'):
+                      (r.headers['access-control-allow-headers']))
+            if r.headers.get('access-control-allow-methods', str()):
                 print('Access-Control-Allow-Methods: %s' %
-                      (r.info().getheader('access-control-allow-methods')))
-            if r.info().getheader('access-control-allow-origin'):
+                      (r.headers['access-control-allow-methods']))
+            if r.headers.get('access-control-allow-origin', str()):
                 print('Access-Control-Allow-Origin: %s' %
-                      (r.info().getheader('access-control-allow-origin')))
-            if r.info().getheader('access-control-expose-headers'):
+                      (r.headers['access-control-allow-origin']))
+            if r.headers.get('access-control-expose-headers', str()):
                 print('Access-Control-Expose-Headers: %s' %
-                      (r.info().getheader('access-control-expose-headers')))
-            if r.info().getheader('access-control-max-age'):
+                      (r.headers['access-control-expose-headers']))
+            if r.headers.get('access-control-max-age', str()):
                 print('Access-Control-Max-Age: %s' %
-                      (r.info().getheader('access-control-max-age')))
-            if r.info().getheader('age'):
-                print('Age: %s' % (r.info().getheader('age')))
-            if r.info().getheader('allow'):
-                print('Allow: %s' % (r.info().getheader('allow')))
-            if r.info().getheader('alternates'):
-                print('Alternates: %s' % (r.info().getheader('alternates')))
-            if r.info().getheader('authorization'):
+                      (r.headers['access-control-max-age']))
+            if r.headers.get('age', str()):
+                print('Age: %s' % (r.headers['age']))
+            if r.headers.get('allow', str()):
+                print('Allow: %s' % (r.headers['allow']))
+            if r.headers.get('alternates', str()):
+                print('Alternates: %s' % (r.headers['alternates']))
+            if r.headers.get('authorization', str()):
                 print('Authorization: %s' %
-                      (r.info().getheader('authorization')))
-            if r.info().getheader('cache-control'):
+                      (r.headers['authorization']))
+            if r.headers.get('cache-control', str()):
                 print('Cache-Control: %s' %
-                      (r.info().getheader('cache-control')))
-            if r.info().getheader('connection'):
-                print('Connection: %s' % (r.info().getheader('connection')))
-            if r.info().getheader('content-encoding'):
+                      (r.headers['cache-control']))
+            if r.headers.get('connection', str()):
+                print('Connection: %s' % (r.headers['connection']))
+            if r.headers.get('content-encoding', str()):
                 print('Content-Encoding: %s' %
-                      (r.info().getheader('content-encoding')))
-            if r.info().getheader('content-language'):
+                      (r.headers['content-encoding']))
+            if r.headers.get('content-language', str()):
                 print('Content-Language: %s' %
-                      (r.info().getheader('content-language')))
-            if r.info().getheader('content-length'):
+                      (r.headers['content-language']))
+            if r.headers.get('content-length', str()):
                 print('Content-Length: %s' %
-                      (r.info().getheader('content-length')))
-            if r.info().getheader('content-location'):
+                      (r.headers['content-length']))
+            if r.headers.get('content-location', str()):
                 print('Content-Location: %s' %
-                      (r.info().getheader('content-location')))
-            if r.info().getheader('content-md5'):
-                print('Content-md5: %s' % (r.info().getheader('content-md5')))
-            if r.info().getheader('content-range'):
+                      (r.headers['content-location']))
+            if r.headers.get('content-md5', str()):
+                print('Content-md5: %s' %
+                      (r.headers['content-md5']))
+            if r.headers.get('content-range', str()):
                 print('Content-Range: %s' %
-                      (r.info().getheader('content-range')))
-            if r.info().getheader('content-security-policy'):
+                      (r.headers['content-range']))
+            if r.headers.get('content-security-policy', str()):
                 print('Content-Security-Policy: %s' %
-                      (r.info().getheader('content-security-policy')))
-            if r.info().getheader('content-security-policy-report-only'):
+                      (r.headers['content-security-policy']))
+            if r.headers.get('content-security-policy-report-only', str()):
                 print('Content-Security-Policy-Report-Only: %s' %
-                      (r.info().getheader('content-security-policy-report-only')))
-            if r.info().getheader('content-type'):
+                      (r.headers['content-security-policy-report-only']))
+            if r.headers.get('content-type', str()):
                 print('Content-Type: %s' %
-                      (r.info().getheader('content-type')))
-            if r.info().getheader('dasl'):
-                print('Dasl: %s' % (r.info().getheader('dasl')))
-            if r.info().getheader('date'):
-                print('Date: %s' % (r.info().getheader('date')))
-            if r.info().getheader('dav'):
-                print('Dav: %s' % r.info().getheader('dav'))
-            if r.info().getheader('etag'):
-                print('Etag: %s' % (r.info().getheader('etag')))
-            if r.info().getheader('from'):
-                print('From: %s' % (r.info().getheader('from')))
-            if r.info().getheader('host'):
-                print('Host: %s' % (r.info().getheader('host')))
-            if r.info().getheader('keep-alive'):
-                print('Keep-Alive: %s' % (r.info().getheader('keep-alive')))
-            if r.info().getheader('last-modified'):
+                      (r.headers['content-type']))
+            if r.headers.get('dasl', str()):
+                print('Dasl: %s' % (r.headers['dasl']))
+            if r.headers.get('date', str()):
+                print('Date: %s' % (r.headers['date']))
+            if r.headers.get('dav', str()):
+                print('Dav: %s' % r.headers.get('dav', str()))
+            if r.headers.get('etag', str()):
+                print('Etag: %s' % (r.headers['etag']))
+            if r.headers.get('from', str()):
+                print('From: %s' % (r.headers['from']))
+            if r.headers.get('host', str()):
+                print('Host: %s' % (r.headers['host']))
+            if r.headers.get('keep-alive', str()):
+                print('Keep-Alive: %s' % (r.headers['keep-alive']))
+            if r.headers.get('last-modified', str()):
                 print('Last-Modified: %s' %
-                      (r.info().getheader('last-modified')))
-            if r.info().getheader('location'):
-                print('Location: %s' % (r.info().getheader('location')))
-            if r.info().getheader('max-forwards'):
+                      (r.headers['last-modified']))
+            if r.headers.get('location', str()):
+                print('Location: %s' % (r.headers['location']))
+            if r.headers.get('max-forwards', str()):
                 print('Max-Forwards: %s' %
-                      (r.info().getheader('max-forwards')))
-            if r.info().getheader('persistent-auth'):
+                      (r.headers['max-forwards']))
+            if r.headers.get('persistent-auth', str()):
                 print('Persistent-Auth: %s' %
-                      (r.info().getheader('persistent-auth')))
-            if r.info().getheader('pragma'):
-                print('Pragma: %s' % (r.info().getheader('pragma')))
-            if r.info().getheader('proxy-authenticate'):
+                      (r.headers['persistent-auth']))
+            if r.headers.get('pragma', str()):
+                print('Pragma: %s' % (r.headers['pragma']))
+            if r.headers.get('proxy-authenticate', str()):
                 print('Proxy-Authenticate: %s' %
-                      (r.info().getheader('proxy-authenticate')))
-            if r.info().getheader('proxy-authorization'):
+                      (r.headers['proxy-authenticate']))
+            if r.headers.get('proxy-authorization', str()):
                 print('Proxy-Authorization: %s' %
-                      (r.info().getheader('proxy-authorization')))
-            if r.info().getheader('proxy-connection'):
+                      (r.headers['proxy-authorization']))
+            if r.headers.get('proxy-connection', str()):
                 print('Proxy-Connection: %s' %
-                      (r.info().getheader('proxy-connection')))
-            if r.info().getheader('public'):
-                print('Public: %s' % (r.info().getheader('public')))
-            if r.info().getheader('range'):
-                print('Range: %s' % (r.info().getheader('range')))
-            if r.info().getheader('referer'):
-                print('Referer: %s' % (r.info().getheader('referer')))
-            if r.info().getheader('server'):
-                print('Server: %s' % (r.info().getheader('server')))
-            if r.info().getheader('set-cookie'):
-                print('Set-Cookie: %s' % (r.info().getheader('set-cookie')))
-            if r.info().getheader('status'):
-                print('Status: %s' % (r.info().getheader('status')))
-            if r.info().getheader('strict-transport-security'):
+                      (r.headers['proxy-connection']))
+            if r.headers.get('public', str()):
+                print('Public: %s' % (r.headers['public']))
+            if r.headers.get('range', str()):
+                print('Range: %s' % (r.headers['range']))
+            if r.headers.get('referer', str()):
+                print('Referer: %s' % (r.headers['referer']))
+            if r.headers.get('server', str()):
+                print('Server: %s' % (r.headers['server']))
+            if r.headers.get('set-cookie', str()):
+                print('Set-Cookie: %s' % (r.headers['set-cookie']))
+            if r.headers.get('status', str()):
+                print('Status: %s' % (r.headers['status']))
+            if r.headers.get('strict-transport-security', str()):
                 print('Strict-Transport-Security: %s' %
-                      (r.info().getheader('strict-transport-security')))
-            if r.info().getheader('transfer-encoding'):
+                      (r.headers['strict-transport-security']))
+            if r.headers.get('transfer-encoding', str()):
                 print('Transfer-Encoding: %s' %
-                      (r.info().getheader('transfer-encoding')))
-            if r.info().getheader('upgrade'):
-                print('Upgrade: %s' % (r.info().getheader('upgrade')))
-            if r.info().getheader('vary'):
-                print('Vary: %s' % (r.info().getheader('vary')))
-            if r.info().getheader('via'):
-                print('Via: %s' % (r.info().getheader('via')))
-            if r.info().getheader('warning'):
-                print('Warning: %s' % (r.info().getheader('warning')))
-            if r.info().getheader('www-authenticate'):
+                      (r.headers['transfer-encoding']))
+            if r.headers.get('upgrade', str()):
+                print('Upgrade: %s' % (r.headers['upgrade']))
+            if r.headers.get('vary', str()):
+                print('Vary: %s' % (r.headers['vary']))
+            if r.headers.get('via', str()):
+                print('Via: %s' % (r.headers['via']))
+            if r.headers.get('warning', str()):
+                print('Warning: %s' % (r.headers['warning']))
+            if r.headers.get('www-authenticate', str()):
                 print('www-Authenticate: %s' %
-                      (r.info().getheader('www-authenticate')))
-            if r.info().getheader('x-content-security-policy'):
+                      (r.headers['www-authenticate']))
+            if r.headers.get('x-content-security-policy', str()):
                 print('X-Content-Security-Policy: %s' %
-                      (r.info().getheader('x-content-security-policy')))
-            if r.info().getheader('x-content-type-options'):
+                      (r.headers['x-content-security-policy']))
+            if r.headers.get('x-content-type-options', str()):
                 print('X-Content-Type-Options: %s' %
-                      (r.info().getheader('x-content-type-options')))
-            if r.info().getheader('x-frame-options'):
+                      (r.headers['x-content-type-options']))
+            if r.headers.get('x-frame-options', str()):
                 print('X-Frame-Options: %s' %
-                      (r.info().getheader('x-frame-options')))
-            if r.info().getheader('x-id'):
-                print('X-Id: %s' % (r.info().getheader('x-id')))
-            if r.info().getheader('x-mod-pagespeed'):
+                      (r.headers['x-frame-options']))
+            if r.headers.get('x-id', str()):
+                print('X-Id: %s' % (r.headers['x-id']))
+            if r.headers.get('x-mod-pagespeed', str()):
                 print('X-Mod-Pagespeed: %s' %
-                      (r.info().getheader('x-mod-pagespeed')))
-            if r.info().getheader('x-pad'):
-                print('X-Pad: %s' % (r.info().getheader('x-pad')))
-            if r.info().getheader('x-page-speed'):
+                      (r.headers['x-mod-pagespeed']))
+            if r.headers.get('x-pad', str()):
+                print('X-Pad: %s' % (r.headers['x-pad']))
+            if r.headers.get('x-page-speed', str()):
                 print('X-Page-Speed: %s' %
-                      (r.info().getheader('x-page-speed')))
-            if r.info().getheader('x-permitted-cross-domain-policies'):
+                      (r.headers['x-page-speed']))
+            if r.headers.get('x-permitted-cross-domain-policies', str()):
                 print('X-Permitted-Cross-Domain-Policies: %s' %
-                      (r.info().getheader('x-permitted-cross-domain-policies')))
-            if r.info().getheader('x-pingback'):
-                print('X-Pingback: %s' % (r.info().getheader('x-pingback')))
-            if r.info().getheader('x-powered-by'):
+                      (r.headers['x-permitted-cross-domain-policies']))
+            if r.headers.get('x-pingback', str()):
+                print('X-Pingback: %s' % (r.headers['x-pingback']))
+            if r.headers.get('x-powered-by', str()):
                 print('X-Powered-By: %s' %
-                      (r.info().getheader('x-powered-by')))
-            if r.info().getheader('x-robots-tag'):
+                      (r.headers['x-powered-by']))
+            if r.headers.get('x-robots-tag', str()):
                 print('X-Robots-Tag: %s' %
-                      (r.info().getheader('x-robots-tag')))
-            if r.info().getheader('x-ua-compatible'):
+                      (r.headers['x-robots-tag']))
+            if r.headers.get('x-ua-compatible', str()):
                 print('X-UA-Compatible: %s' %
-                      (r.info().getheader('x-ua-compatible')))
-            if r.info().getheader('x-varnish'):
-                print('X-Varnish: %s' % (r.info().getheader('x-varnish')))
-            if r.info().getheader('x-xss-protection'):
+                      (r.headers['x-ua-compatible']))
+            if r.headers.get('x-varnish', str()):
+                print('X-Varnish: %s' % (r.headers['x-varnish']))
+            if r.headers.get('x-xss-protection', str()):
                 print('X-XSS-Protection: %s' %
-                      (r.info().getheader('x-xss-protection')))
+                      (r.headers['x-xss-protection']))
         except Exception as error:
             pass
         print("")

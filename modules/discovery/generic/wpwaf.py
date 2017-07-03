@@ -54,9 +54,9 @@ class wpwaf:
                     'Firewall Detection: All In One WP Security & Firewall')
             elif re.search('/wp-content/plugins/6scan-protection', html):
                 self.printf.plus('Firewall Detection: 6Scan Security')
-            elif re.search('cloudflare-nginx', resp.info().getheader('server'), re.I):
+            elif re.search('cloudflare-nginx', resp.headers.get('server', str()), re.I):
                 self.printf.plus('Firewall Detection: CloudFlare')
-            elif re.search('__cfduid', resp.info().getheader('cookie'), re.I):
+            elif re.search('__cfduid', resp.headers.get('cookie', str()), re.I):
                 self.printf.plus('Firewall Detection: CloudFlare')
             else:
                 self.printf.erro('No Firewall Detected')
